@@ -5,7 +5,7 @@ function calendar () {
 			return;
 		return moment(time).calendar(null, {
 			lastDay: '[Yesterday]',
-			sameDay: 'L/T',
+			sameDay: 'LT',
 			lastWeek: 'dddd',
 			sameElse: 'DD/MM/YY'
 		});

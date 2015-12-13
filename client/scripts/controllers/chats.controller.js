@@ -2,6 +2,8 @@ angular.module('Whatsapp').controller('ChatsCtrl', ChatsCtrl);
 
 function ChatsCtrl($scope, $reactive){
 	$reactive(this).attach($scope);
+	this.remove = remove;
+
   this.data = [
   {
     _id: 0,
@@ -47,5 +49,10 @@ function ChatsCtrl($scope, $reactive){
       text: 'This is wicked good ice cream.',
       timestamp: moment().subtract(2, 'weeks').toDate()
     }
-  }]
+  }];
+}
+
+
+function remove (chat) {
+	this.data.splice(this.data.indexOf(chat), 1);
 }
