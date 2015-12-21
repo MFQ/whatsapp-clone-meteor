@@ -26,9 +26,21 @@ function config ($stateProvider, $urlRouterProvider) {
 				}
 			}
 		})
-		.state('login', {})
-		.state('confirmation', {})
-		.state('profile', {});
+		.state('login', {
+			url: "/login",
+			templateUrl: "client/templates/login.html",
+			controller: "LoginCtrl as logger"
+		})
+		.state('confirmation', {
+			url: "/confirmation/:phone",
+			templateUrl: "client/templates/confirmation.html",
+			controller: "ConfirmationCtrl as confirmation"
+		})
+		.state('profile', {
+			url: "/profile",
+			templateUrl: "client/templates/profile.html",
+			controller: "ProfileCtrl as profile"
+		});
 
 	$urlRouterProvider.otherwise("tab/chats");
 }
