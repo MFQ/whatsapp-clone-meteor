@@ -25,7 +25,10 @@ function config ($stateProvider, $urlRouterProvider) {
 					controller: "ChatCtrl as chat"
 				}
 			}
-		});
+		})
+		.state('login', {})
+		.state('confirmation', {})
+		.state('profile', {});
 
 	$urlRouterProvider.otherwise("tab/chats");
 }
